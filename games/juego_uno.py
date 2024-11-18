@@ -1,4 +1,4 @@
-#import tkinter as tk
+import tkinter as tk
 import pygame
 import random as r
 import constantes_globales as cg
@@ -23,6 +23,7 @@ zona_juego.pack()
 ventana.mainloop()
 '''
 # Codigo Pygame
+
 
 pc = Computador()
 plancha = PlCorte()
