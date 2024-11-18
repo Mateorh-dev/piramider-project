@@ -1,8 +1,8 @@
 import tkinter as tk
 import pygame
 import random as r
-import constantes_globales as cg
-from objetos_juego_uno import *
+import games.constantes_globales as cg
+from games.objetos_juego_uno import *
 '''
 # Codigo Tkinter
 
@@ -56,28 +56,33 @@ for e in lobj_componenetes_pc:
     e.set_px(espacio)
     espacio += e.get_ancho()
 
-pygame.init()
+def StartArmandoMiPc():
+    pygame.init()
 
-game_screen = pygame.display.set_mode((cg.ancho_juego,cg.alto_juego))
+    pygame.display.set_caption("Armando mi PC - PIRAMIDER")
+    icono = pygame.image.load("icon/piramider.png")
+    pygame.display.set_icon(icono)
 
-run = True
+    game_screen = pygame.display.set_mode((cg.ancho_juego,cg.alto_juego))
 
-while run:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
-    
-    click = pygame.mouse.get_pressed()[0]
-    posicion = pygame.mouse.get_pos()
-    movimiento = pygame.mouse.get_rel()
+    run = True
 
-    plancha.dibujar(game_screen)
-    pc.dibujar(game_screen)
-       
-    for d in lobj_componenetes_pc:
-        d.set_posicion(click,posicion,movimiento)
-        d.dibujar(game_screen)
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+        
+        click = pygame.mouse.get_pressed()[0]
+        posicion = pygame.mouse.get_pos()
+        movimiento = pygame.mouse.get_rel()
 
-    pygame.display.update()
+        plancha.dibujar(game_screen)
+        pc.dibujar(game_screen)
+        
+        for d in lobj_componenetes_pc:
+            d.set_posicion(click,posicion,movimiento)
+            d.dibujar(game_screen)
 
-pygame.quit()
+        pygame.display.update()
+
+    pygame.quit()

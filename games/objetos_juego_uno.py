@@ -1,6 +1,6 @@
 import pygame
-import constantes_globales as cg
-import sprites as s
+import games.constantes_globales as cg
+import games.sprites as s
 
 def CalcularForma(sprite,px,py):
     return pygame.Rect(px,py,sprite.get_width(),sprite.get_height())

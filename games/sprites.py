@@ -1,5 +1,5 @@
 import pygame
-import constantes_globales as cg
+import games.constantes_globales as cg
 
 plcorte = pygame.transform.scale(pygame.image.load("games/picture/plcorte.png"),
                                (cg.ancho_juego,cg.alto_juego))
